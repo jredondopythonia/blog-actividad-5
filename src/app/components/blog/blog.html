@@ -34,8 +34,21 @@
     <section class="panel list-panel">
         <h2>Listado de noticias</h2>
 
-        <div class="empty">
-            <p>Aún no hay publicaciones</p>
-        </div>
+        @if (posts.length ===0 ){
+            <p>No hay publicaciones todavía</p>
+        }@else{
+            @for(post of posts; track $index){
+                <article class="post">
+                    <h3>{{post.title}}</h3>
+
+                    <img [src]="post.imageUrl" [alt]="post.title">
+
+                    <p>{{post.body}}</p>
+
+                    <small>{{post.date}}</small>
+                </article>
+            }
+        }
+
     </section>
 </div>
