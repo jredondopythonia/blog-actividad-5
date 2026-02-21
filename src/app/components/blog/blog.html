@@ -1,1 +1,41 @@
-<p>blog works!</p>
+<div class="blog">
+
+    <section class="panel form-panel">
+        <h2>Nueva publicación</h2>
+
+        <form class="post-form">
+            <div class="field">
+                <label for="title">Titulo</label>
+                <input id="title" type="text" placeholder="Escribe el titulo">
+            </div>
+
+            <div class="field">
+                <label for="image">Imagen (URL)</label>
+                <input id="image" type="url" placeholder="https://..."/>
+            </div>
+
+            <div class="field">
+                <label for="body">Texto</label>
+                <textarea id="body" rows="6" placeholder="Escribe el texto de la noticia"></textarea>
+                
+            </div>
+
+            <div class="field">
+                <label for="date">Fecha de publicación</label>
+                <input id="date" type="date"/>
+            </div>
+
+            <button type="submit">Publicar</button>
+
+        </form>
+
+    </section>
+
+    <section class="panel list-panel">
+        <h2>Listado de noticias</h2>
+
+        <div class="empty">
+            <p>Aún no hay publicaciones</p>
+        </div>
+    </section>
+</div>
