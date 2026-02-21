@@ -3,29 +3,34 @@
     <section class="panel form-panel">
         <h2>Nueva publicación</h2>
 
-        <form class="post-form">
+        <form class="post-form" (ngSubmit)="addPost()">
             <div class="field">
                 <label for="title">Titulo</label>
-                <input id="title" type="text" placeholder="Escribe el titulo">
+                <input id="title" name="title" type="text" placeholder="Escribe el titulo" [(ngModel)]="newPost.title" ]>
             </div>
 
             <div class="field">
                 <label for="image">Imagen (URL)</label>
-                <input id="image" type="url" placeholder="https://..."/>
+                <input id="image" name="imageUrl" type="url" placeholder="https://..." [(ngModel)]="newPost.imageUrl" />
             </div>
 
             <div class="field">
                 <label for="body">Texto</label>
-                <textarea id="body" rows="6" placeholder="Escribe el texto de la noticia"></textarea>
-                
+                <textarea id="body" name="body" rows="6" placeholder="Escribe el texto de la noticia"
+                    [(ngModel)]="newPost.body"></textarea>
+
             </div>
 
             <div class="field">
                 <label for="date">Fecha de publicación</label>
-                <input id="date" type="date"/>
+                <input id="date" name="date" type="date" [(ngModel)]="newPost.date" />
             </div>
 
             <button type="submit">Publicar</button>
+
+            @if (errorMessage) {
+            <p class="error">{{ errorMessage }}</p>
+            }
 
         </form>
 
@@ -35,19 +40,19 @@
         <h2>Listado de noticias</h2>
 
         @if (posts.length ===0 ){
-            <p>No hay publicaciones todavía</p>
+        <p>No hay publicaciones todavía</p>
         }@else{
-            @for(post of posts; track $index){
-                <article class="post">
-                    <h3>{{post.title}}</h3>
+        @for(post of posts; track $index){
+        <article class="post">
+            <h3>{{post.title}}</h3>
 
-                    <img [src]="post.imageUrl" [alt]="post.title">
+            <img [src]="post.imageUrl" [alt]="post.title">
 
-                    <p>{{post.body}}</p>
+            <p>{{post.body}}</p>
 
-                    <small>{{post.date}}</small>
-                </article>
-            }
+            <small>{{post.date}}</small>
+        </article>
+        }
         }
 
     </section>
