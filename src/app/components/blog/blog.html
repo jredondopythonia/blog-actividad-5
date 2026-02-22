@@ -6,7 +6,8 @@
         <form class="post-form" (ngSubmit)="addPost()">
             <div class="field">
                 <label for="title">Titulo</label>
-                <input id="title" name="title" type="text" placeholder="Escribe el titulo" [(ngModel)]="newPost.title" ]>
+                <input id="title" name="title" type="text" placeholder="Escribe el titulo" [(ngModel)]="newPost.title"
+                    ]>
             </div>
 
             <div class="field">
@@ -28,9 +29,7 @@
 
             <button type="submit">Publicar</button>
 
-            @if (errorMessage) {
-            <p class="error">{{ errorMessage }}</p>
-            }
+
 
         </form>
 

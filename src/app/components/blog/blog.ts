@@ -25,7 +25,7 @@ export class Blog {
     }
   ];
 
-  errorMessage: string = '';
+
 
   newPost: Post = {
     title: "",
@@ -46,24 +46,25 @@ export class Blog {
 
 
 
-  addPost() {
+  addPost(): void {
 
-    this.errorMessage = "";
+    /**Validacion  */
     if (
       !this.newPost.title.trim() ||
       !this.newPost.imageUrl.trim() ||
       !this.newPost.body.trim() ||
       !this.newPost.date.trim()
     ) {
-      this.errorMessage = 'Todos los campos son obligatorios';
 
+
+      alert('Todos los campos son obligatorios')
 
       return;
     }
     console.log(this.newPost);
 
     this.posts.unshift({ ...this.newPost });
-    this.errorMessage = '';
+
 
     this.resetnewPost()
 

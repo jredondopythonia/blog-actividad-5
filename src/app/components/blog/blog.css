@@ -1,17 +1,26 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .blog{
     display: flex;
     gap:16px;
     padding: 16px;
     align-items: flex-start;
+    background-color: rgb(255, 255, 255);
 }
 
 /*Cada panel que ocupe la mitad*/
-
+h2{
+    text-align: center;
+    padding: 10px;
+    border-bottom :#110d0d solid 1px
+}
 .panel{
     flex:1;
-    border: 1px solid #ddd;
+    border: 1px solid #110d0d;
     border-radius: 8px;
     padding: 16px;
+    background-color: rgb(216, 222, 241);
 }
 
 /*Formulario*/
@@ -19,7 +28,8 @@
 .post-form {
     display:flex;
     flex-direction: column;
-    gap: 12px
+    gap: 12px;
+    
 
 }
 
@@ -31,7 +41,7 @@
 
 input, textarea{
     padding:8px;
-    border: 1px solid #ccc;
+    border: 1px solid #171313;
     border-radius: 6px;
 }
 
@@ -47,35 +57,6 @@ button{
     width: 100%;
 }
 
-.error {
-  margin-top: 12px;
-  padding: 10px 14px;
-  background-color: #ffe5e5;
-  color: #b00020;
-  border: 1px solid #ff4d4d;
-  border-radius: 6px;
-  font-weight: 500;
-  text-align: center;
-
-  animation: fadeOut 3s forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 
 
